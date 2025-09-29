@@ -1,0 +1,97 @@
+/* color palette from <https://github.com/vuejs/theme> */
+/* ===== Фирменная палитра ===== */
+:root {
+  /* Бренд */
+  --brand-white: #ffffff;
+  --brand-black: #000000;
+  /* Серые оттенки */
+  --brand-gray-light: #cacaca;  /* самый светлый */
+  --brand-gray:       #bdbdbd;  /* базовый серый */
+  --brand-gray-mid:   #bbbbbb;  /* средний */
+  --brand-gray-dark:  #b8b8b8;  /* чуть темнее */
+  --brand-gray-border: #303030;
+  /* ===== Семантические (по умолчанию ТЁМНАЯ тема) ===== */
+  --color-background: var(--brand-black);
+  --color-background-soft: #111111;
+  --color-background-mute: #1a1a1a;
+  --color-text: var(--brand-white);
+  --color-text-muted-1: var(--brand-gray);
+  --color-text-muted-2: var(--brand-gray-mid);
+  --color-text-muted-3: var(--brand-gray-light);
+  --color-text-muted-4: var(--brand-gray-dark);
+  --color-border: var(--brand-gray-border); 
+  --max-w: 2000px; 
+}
+
+@font-face {
+  font-family: 'MorfinSans';
+  src: url('@/assets/fonts/MorfinSans-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --font-main: Arial, sans-serif;
+  --font-heading: 'MorfinSans', sans-serif;
+}
+:root {
+  --radius-sm: 5px;
+}
+
+
+
+
+/* Светлая тема (если в системе стоит Light Mode) */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-background: var(--brand-white);
+    --color-background-soft: var(--brand-gray-light);
+    --color-background-mute: var(--brand-gray);
+
+    --color-text: var(--brand-black);
+    --color-text-muted: var(--brand-gray-dark);
+
+    --color-heading: var(--brand-black);
+
+    --color-border: var(--brand-gray-mid);
+    --color-border-hover: var(--brand-gray-dark);
+  }
+}
+
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
