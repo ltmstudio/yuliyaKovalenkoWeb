@@ -31,7 +31,7 @@ import { albums } from '@/data/albums'
 </template>
 
 <style scoped>
-.albums{ background:var(--color-background); color:#fff; }
+.albums{ background:var(--color-background ); color:#fff;}
 .container{ width:100%; max-width:var(--max-w); margin:0 auto; padding:3% 6%; border-block: 2px solid var(--color-border);}
 .title {font-size:72px;margin-bottom: 24px;font-family: var(--font-heading); line-height: 0.7;}
 .grid {display: grid;gap: 24px;grid-template-columns: repeat(3, 1fr);}
