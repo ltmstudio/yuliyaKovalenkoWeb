@@ -7,7 +7,7 @@ const routes = [
 //   { path: '/', name: 'home', component: HomePage },
   { path: '/contacts', name: 'contacts', component: () => import('@/pages/Contacts.vue') },
   { path: '/', name: 'services', component: () => import('@/pages/Services.vue') },
-  { path: '/services', name: 'services', component: () => import('@/pages/Services.vue') },
+  // { path: '/services', name: 'services', component: () => import('@/pages/Services.vue') },
   { path: '/portfolio', name: 'portfolio', component: () => import('@/pages/Portfolio.vue') },
   { path: '/albums', name: 'albums', component: () => import('@/pages/Albums.vue') },
   

@@ -11,7 +11,7 @@ const close = () => (open.value = false)
 
 // ссылки меню
 const links = [
-  { to: '/services', label: 'УСЛУГИ' },
+  { to: '/', label: 'УСЛУГИ' },
   { to: '/albums', label: 'ПОРТФОЛИО' },
   { to: '/learning', label: 'ОБУЧЕНИЕ' },
   { to: '/contacts', label: 'КОНТАКТЫ' },

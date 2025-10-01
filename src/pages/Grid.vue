@@ -9,9 +9,9 @@ const meta = computed(() => albums.find(a => a.id === String(route.params.id)) |
 
 /* Список фото альбома (замени на свою генерацию/массив) */
 const photoCounts: Record<string, number> = {
-  album1: 60,
-  album2: 42,
-  album3: 30,
+  album1: 69,
+  album2: 107,
+  album3: 85,
   album4: 0,
   album5: 0,
   album6: 0,
@@ -20,7 +20,7 @@ const photoCounts: Record<string, number> = {
 const id = computed(() => String(route.params.id))
 const folder = computed(() => id.value.replace('album',''))
 const photos = computed(() =>
-  Array.from({ length: photoCounts[id.value] ?? 0 }, (_, i) => `/img/albums/${folder.value}/${i+1}.jpg`)
+  Array.from({ length: photoCounts[id.value] ?? 0 }, (_, i) => `/pictures/album-grid/${folder.value}/${i+1}.jpg`)
 )
 
 /* Lazy через IntersectionObserver */

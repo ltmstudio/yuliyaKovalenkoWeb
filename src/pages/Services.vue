@@ -45,9 +45,9 @@ const fmt = (v: number | string) =>
     <section class="services">
       <div class="container">
         <!-- Левое фото -->
-        <div class="hero-photo">
+        <!-- <div class="hero-photo">
           <img src="/pictures/services/ser1.jpg" alt="Юлия Коваленко" />
-        </div>
+        </div> -->
   
         <!-- Правый столбец: title + subtitle + карусель -->
         <div class="content">
@@ -76,20 +76,17 @@ const fmt = (v: number | string) =>
   <style scoped>
   /* секция и сетка */
   .services { background: var(--color-background); color:#fff; }
-  .container{
-    width:100%; max-width:var(--max-w); margin:0 auto; padding:2% 6%;  border-block: 2px solid var(--color-border);
-    display:grid; grid-template-columns:minmax(410px, 38%) 1fr; gap:32px; align-items:start; overflow: hidden;
-  }
+  .container{width:100%; max-width:var(--max-w); margin:0 auto; padding:3% 6%; border-block: 2px solid var(--color-border) ; overflow: hidden; }
   
   /* левое фото — как в макете, уже и выше */
-  .hero-photo { align-self: stretch; display:flex;align-self: stretch;display: flex;border-right: 2px solid  var(--color-border);padding-right: 32px;}
+  .hero-photo { align-self: stretch; display:flex;align-self: stretch;display: flex;border-right: 2px solid  var(--color-border);padding-right: 32px; display: none;}
   .hero-photo img{
     width:100%; height:auto; object-fit:cover; border:2px solid var(--color-border); border-radius:5px;
     aspect-ratio: 4/5;            /* фиксируем пропорцию */
   }
   
   /* заголовок над каруселью */
-  .head{ margin-bottom:18px; }
+  .head{ margin-bottom:18px; display: none;}
   .title{ font-size:72px; line-height:0.7; margin:0;font-family: var(--font-heading);}
   .subtitle{ color:#bebebe; font-size:clamp(14px,1.2vw,18px); margin:0; font-weight: 400; }
   
@@ -106,13 +103,13 @@ const fmt = (v: number | string) =>
   .card{
     display:flex; gap:8px; width: 300px; height: 100%; flex-direction: column;
   }
-  .desc{flex-grow: 1;}
+  .desc{flex-grow: 1; display: none;}
   .img-wrap{
     height: 340px; width: 260px; border:2px solid var(--color-border); border-radius:5px; overflow:hidden; background:#121212;
   }
   .img-wrap img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .card-title{ font-size:16px; margin:6px 0 0; color:#fff; }
-  .price{ font-weight:700; color:#eaeaea; }
+  .card-title{ font-size:16px; margin:6px 0 0; color:#cacaca; }
+  .price{ font-weight:400; color: #fff; }
   .desc{ color:#bdbdbd; font-size:13px; line-height:1.4; }
   
   /* небольшой отступ сверху у слайдера, чтобы линия не прилипала к заголовку */
@@ -120,7 +117,7 @@ const fmt = (v: number | string) =>
   .splide__arrow--prev{display: none;}
   @media(max-width:768px){
     .title{font-size: clamp(42px, 7.8125vw, 60px);}
-    .container{grid-template-columns:  minmax(320px, 38%) 1fr;}
+    .container{}
     .img-wrap{height: 280px; width:230px}
     .card{width: 270px; gap:3px}    
   }

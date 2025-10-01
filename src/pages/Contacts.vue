@@ -10,7 +10,7 @@ import { ref } from 'vue'
         <div class="container">
             <div class="adress">
                 <div class="name">АДРЕС:
-                    <div class="desc">Юр. адрес: Ростовская обл. г. Красный Сулин, ул. Галатова д.135</div>
+                    <div class="desc">.</div>
                 </div>
 
 
@@ -37,8 +37,8 @@ import { ref } from 'vue'
                 </div>
 
                 <div class="budget">
-                    <div class="desc">ИП Sname Name Fname</div>
-                    <div class="desc">ИНН 615424739453</div>
+                    <div class="desc">ИП</div>
+                    <div class="desc">ИНН</div>
                 </div>
 
             </div>
@@ -83,7 +83,7 @@ img.signuture{height: clamp(86px, 9.72222222222vw, 140px); width: auto;}
 }
 @media(max-width:480px){
     .container{padding-top: 20px; padding-bottom: 24px;}
-    .adress{border-bottom: 2px solid var(--color-border); border-top: 2px solid var(--color-border);}
+    .adress{border-bottom: 2px solid var(--color-border); border-top: none;}
     .profile{border: 20px solid #262626;}
     .profile img{border-radius: 45px;}
 }

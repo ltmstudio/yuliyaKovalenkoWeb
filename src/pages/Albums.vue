@@ -33,7 +33,7 @@ import { albums } from '@/data/albums'
 <style scoped>
 .albums{ background:var(--color-background ); color:#fff;}
 .container{ width:100%; max-width:var(--max-w); margin:0 auto; padding:3% 6%; border-block: 2px solid var(--color-border);}
-.title {font-size:72px;margin-bottom: 24px;font-family: var(--font-heading); line-height: 0.7;}
+.title {font-size:72px;margin-bottom: 24px;font-family: var(--font-heading); line-height: 0.7; display: none;}
 .grid {display: grid;gap: 24px;grid-template-columns: repeat(3, 1fr);}
 .album {display: block;text-decoration: none;color: inherit;}
 .cover {aspect-ratio: 4 / 3;border: 2px solid var(--color-border);border-radius: 5px;overflow: hidden;background: #111;}
