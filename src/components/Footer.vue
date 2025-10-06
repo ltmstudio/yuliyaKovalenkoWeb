@@ -34,6 +34,7 @@ const links = [
           <img src="/pictures/socials/insta.png" class="social-img"/>
           <div class="desc">@monamorew</div>
         </a>
+        <div class="ltm">Разработка сайта: <a href="https://ltm.studio/ru" class="ltm-link">ltm.studio</a></div>
       </div>
 
       <a href="/" class="logo" aria-label="На главную">
@@ -60,6 +61,9 @@ a { color: #fff; text-decoration: none; }
 .socials { display: flex; flex-direction: column; align-self: flex-end; }
 .social-link{display: flex; gap:10px; align-items: center;}
 .social-img{height: 20px;}
+.ltm{color: var(--color-text-muted-4);font-weight: 200;padding-top: 10px;}
+.ltm-link{color: var(--color-text-muted-4);}
+.ltm-link:hover{color:#fff;}
 @media (max-width: 1024px) {
   .container{padding: 5%;}
 }
