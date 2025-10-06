@@ -5,6 +5,7 @@ import { ref } from 'vue'
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
 import '@splidejs/vue-splide/css';
 
+
 type Service = {
   id: number
   title: string

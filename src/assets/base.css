@@ -40,22 +40,7 @@
 
 
 
-/* Светлая тема (если в системе стоит Light Mode) */
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-background: var(--brand-white);
-    --color-background-soft: var(--brand-gray-light);
-    --color-background-mute: var(--brand-gray);
 
-    --color-text: var(--brand-black);
-    --color-text-muted: var(--brand-gray-dark);
-
-    --color-heading: var(--brand-black);
-
-    --color-border: var(--brand-gray-mid);
-    --color-border-hover: var(--brand-gray-dark);
-  }
-}
 
 
 
@@ -95,3 +80,4 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
