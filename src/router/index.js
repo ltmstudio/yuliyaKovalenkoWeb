@@ -51,6 +51,11 @@ const routes = [
       desc: 'Отдельный альбом с фотосессией и подробностями.',
       ogImage: "https://monamorew-photographer.ru/pictures/album-grid/1/2.jpg"
     }
+  },
+  {
+    path: '/:pathMatch(.*)*',
+  name: 'NotFound',
+  component: () => import('@/pages/NotFound.vue')
   }
 ]
 
@@ -77,7 +82,7 @@ router.afterEach((to) => {
   const title = to.meta?.title || 'Monamorev Photographer'
   const desc = to.meta?.desc || 'Monamorev Photographer — портфолио и услуги фотографа Юлии Коваленко.'
   const ogImage = to.meta?.ogImage || "https://monamorew-photographer.ru/pictures/album-grid/1/2.jpg"
-
+  const url = "https://monamorew-photographer.ru" + to.fullPath
   // title
   document.title = title
 
@@ -88,6 +93,32 @@ router.afterEach((to) => {
   updateMeta('meta[property="og:title"]', 'property', title)
   updateMeta('meta[property="og:description"]', 'property', desc)
   updateMeta('meta[property="og:image"]', 'property', ogImage)
+
+    // JSON-LD
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": to.path === '/' ? "WebSite" : "WebPage", 
+      "name": title,
+      "description": desc,
+      "url": url,
+      "image": ogImage,
+      "publisher": {
+        "@type": "Organization",
+        "name": "ltm.studio",
+        "url": "https://ltm.studio"
+      }
+    }
+  
+    // удаляем старый JSON-LD, если есть
+    const old = document.getElementById('json-ld')
+    if (old) old.remove()
+  
+    // добавляем новый
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.id = 'json-ld'
+    script.textContent = JSON.stringify(jsonLd)
+    document.head.appendChild(script)
 })
 
 export default router

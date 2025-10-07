@@ -50,7 +50,7 @@ const links = [
 .container {width:100%;margin: 0 auto;display: flex; justify-content: space-between ; align-items: flex-start; padding: 3% 6%;box-sizing: border-box; }
 
 /* Логотип */
-.logo {display: inline-block;color: var(--brand-white);text-decoration: none;font-family: var(--font-heading);font-size: clamp(130px, 13.1944444444vw, 190px);line-height: 0.6;letter-spacing: 0.02em;position: relative;}
+.logo {display: inline-block;color: var(--brand-white);text-decoration: none;font-family: var(--font-heading);font-size: clamp(130px, 13.1944444444vw, 190px);line-height: 0.6;letter-spacing: 0.02em;position: relative; padding:0; right:-10px;}
 
 .container.is-contacts {
   justify-content: flex-end;
@@ -66,6 +66,7 @@ a { color: #fff; text-decoration: none; }
 .ltm-link:hover{color:#fff;}
 @media (max-width: 1024px) {
   .container{padding: 5%;}
+  .logo{right:0}
 }
 @media(max-width:480px){
     .logo{display: none;}

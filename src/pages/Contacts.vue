@@ -53,7 +53,7 @@ import { ref } from 'vue'
 
 <style scoped>
 .contacts { width: 100%; max-width: var(--max-w); position: sticky; top: 0; z-index: 1; background: var(--color-background); margin: 0 auto; }
-.container { width: 100%; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; padding: 0 6%; box-sizing: border-box; gap: 100px; align-items: stretch; justify-content: space-between;}
+.container { width: 100%; margin: 0 auto; display: grid; grid-template-columns: 0.6fr 1fr; padding: 0 6%; box-sizing: border-box; gap: 300px; align-items: stretch; justify-content: space-between;}
 
 
 .adress { display: flex; align-items: center; justify-content: center; padding: 40px 0;box-sizing: border-box; width: -webkit-fill-available;}
@@ -65,14 +65,18 @@ a { color: #fff; text-decoration: none; }
 .socials { display: flex; flex-direction: column; }
 .social-link{display: flex; gap:10px; align-items: center;}
 .social-img{height: 20px;}
-.photo{display: flex; justify-content: end; align-items: end; gap:60px; width: max-content; justify-self: end;}
+.photo{display: flex; justify-content: end; align-items: end; gap:60px; width: inherit; justify-self: end;}
 .profile {height: clamp(460px, 33.3333333333vw, 480px);border:2px solid #393939; border-radius: 5px;}
 .profile img{object-fit: cover; width: 100%;}
 img.signuture{height: clamp(86px, 9.72222222222vw, 140px); width: auto;}
 .signuture img{object-fit: cover; width: 100%;}
 
+@media(max-width:1440px){
+    .container{gap:100px}
+   
+}
 @media(max-width:1024px){
-    .container{gap:50px}
+    .container{gap:30px; grid-template-columns: 0.6fr 1fr;}
     .photo{gap:30px}
 }
 @media(max-width:768px){

@@ -23,10 +23,16 @@ const photos = computed(() =>
   Array.from({ length: photoCounts[id.value] ?? 0 }, (_, i) => `/pictures/album-grid/${folder.value}/${i+1}.jpg`)
 )
 
+/* 🔹 Только добавлено: флаг наличия фото */
+const hasPhotos = computed(() => photos.value.length > 0)
+
 /* Lazy через IntersectionObserver */
 const observerMap = new WeakMap<Element, IntersectionObserver>()
 const vLazy = {
   mounted(el: HTMLImageElement, binding: any) {
+    // Проверка работы v-lazy
+    // eslint-disable-next-line no-console
+    console.log('v-lazy mounted', el, binding)
     const realSrc = String(binding.value)
     el.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="30"><rect width="100%" height="100%" fill="%23161616"/></svg>'
     const io = new IntersectionObserver((en, obs) => {
@@ -77,13 +83,18 @@ const onTouchEnd = (e: TouchEvent) => {
     <div class="container">
       <h1 class="title">{{ meta ? meta.title : 'Альбом' }}</h1>
 
-      <!-- Masonry (CSS columns) -->
-      <div class="masonry">
+      <!-- 🔹 Только добавлено: v-if/v-else для заглушки -->
+      <div v-if="hasPhotos" class="masonry">
         <figure v-for="(p,i) in photos" :key="i" class="item">
           <button class="thumb" @click="openViewer(i)" aria-label="Открыть фото">
             <img v-lazy="p" :alt="`${meta?.title || 'Фото'} — ${i+1}`" />
           </button>
         </figure>
+      </div>
+
+      <div v-else class="placeholder">
+        <p class="ph-title">В этом альбоме пока нет фотографий</p>
+        <p class="ph-sub">Скоро добавим новые работы.</p>
       </div>
     </div>
 
@@ -113,8 +124,6 @@ export default { directives: { lazy: {} } }
 
 /* Masonry */
 .masonry { column-count: 4; column-gap: 14px; }
-
-
 .item { break-inside: avoid; margin-bottom: 14px; border: 2px solid var(--color-border); border-radius: 6px; overflow: hidden; background:#111; }
 .thumb { padding:0; margin:0; background:none; border:0; width:100%; display:block; cursor:zoom-in; }
 .item img { width:100%; height:auto; display:block; filter: blur(6px); opacity:.7; transition: filter .25s ease, opacity .25s ease, transform .2s ease; }
@@ -122,8 +131,14 @@ export default { directives: { lazy: {} } }
 .item:hover img { transform: scale(1.01); }
 
 @media (max-width: 1200px) { .masonry { column-count: 4; } }
-@media (max-width: 900px)  { .masonry { column-count: 3; column-gap: 8px; } .item {margin-bottom: 10px;}}
-@media (max-width: 560px)  { .masonry { column-count: 2; column-gap: 4px; } .item {margin-bottom: 6px;}}
+@media (max-width: 900px)  { .masonry { column-count: 3; column-gap: 8px; } .item {margin-bottom: 10px;} }
+@media (max-width: 560px)  { .masonry { column-count: 2; column-gap: 4px; } .item {margin-bottom: 6px;} }
+
+/* 🔹 Только добавлено: стили заглушки */
+.placeholder { display:grid; place-items:center; min-height:20vh; border:1px dashed var(--color-border); border-radius:6px;  color:#cfcfcf; }
+.ph-title { font-size:18px; margin:8px 0 2px; text-align: center;}
+.ph-sub { font-size:14px; color:var(--color-text-muted-2); }
+
 /* Лайтбокс */
 .lightbox {
   position: fixed; inset: 0; z-index: 2000;
@@ -139,8 +154,6 @@ export default { directives: { lazy: {} } }
   width:40px; height:40px; 
   border:none; background:transparent; color:#fff; cursor:pointer; font-size:40px; line-height:1;
 }
-.lb__close:hover { border-color:#aaa; }
-
 .lb__nav {
   width:48px; height:48px; 
   border:none; background:transparent; color:#fff;
