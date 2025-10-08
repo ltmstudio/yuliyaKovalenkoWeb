@@ -65,7 +65,7 @@ a { color: #fff; text-decoration: none; }
 .socials { display: flex; flex-direction: column; }
 .social-link{display: flex; gap:10px; align-items: center;}
 .social-img{height: 20px;}
-.photo{display: flex; justify-content: end; align-items: end; gap:60px; width: inherit; justify-self: end;}
+.photo{display: flex; justify-content: end; align-items: end; gap:60px; width: 716px; justify-self: end;}
 .profile {height: clamp(460px, 33.3333333333vw, 480px);border:2px solid #393939; border-radius: 5px;}
 .profile img{object-fit: cover; width: 100%;}
 img.signuture{height: clamp(86px, 9.72222222222vw, 140px); width: auto;}
@@ -76,20 +76,23 @@ img.signuture{height: clamp(86px, 9.72222222222vw, 140px); width: auto;}
    
 }
 @media(max-width:1024px){
-    .container{gap:30px; grid-template-columns: 0.6fr 1fr;}
-    .photo{gap:30px}
+    .container{gap:30px; grid-template-columns: 0.75fr 1fr;}
+    .photo{gap:30px; width: 560px;}
+
 }
 @media(max-width:768px){
     .container{grid-template-columns: 1fr; padding-bottom: 60px; gap:20px}
     .adress{padding: 20px 0;}
     .photo{justify-content: center; justify-self: center; border-bottom: none; display: flex; flex-direction: column-reverse; align-items: center; position: relative;padding-bottom: 60px;}
     img.signuture{position: absolute; bottom: -20px; height: 100px;}
+    .photo{width: auto;}
 }
 @media(max-width:480px){
     .container{padding-top: 20px; padding-bottom: 24px;}
     .adress{border-bottom: 2px solid var(--color-border); border-top: none;}
     .profile{border: 20px solid #262626;}
     .profile img{border-radius: 45px;}
+    .photo{width: auto;}
 }
 @media(max-width:330px){
     .profile{height: 320px;}

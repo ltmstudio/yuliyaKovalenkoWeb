@@ -50,5 +50,6 @@ import { albums } from '@/data/albums'
 @media(max-width:480px){
   .grid{gap:16px; grid-template-columns: repeat(1, 1fr);}
   .container{padding: 10% 6%; border-top:none}
+  .album-title{margin-top: 6px;}
 }
 </style>

@@ -68,6 +68,9 @@ a { color: #fff; text-decoration: none; }
   .container{padding: 5%;}
   .logo{right:0}
 }
+@media(max-width:768px){
+  .logo{line-height: 0.8;}
+}
 @media(max-width:480px){
     .logo{display: none;}
 }

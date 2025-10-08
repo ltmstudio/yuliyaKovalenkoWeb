@@ -128,9 +128,9 @@ const links = [
   .burger {width: 36px; height: 36px; gap:3px;position: absolute;right: 5%;top: 10%;}
   .logo2{display:block;} .logo{display: none;}
   .logo-sub2{display: block; font-size: 12px;} .logo-sub{display: none;}
-  .nav2{display: flex; padding-bottom: 3px; }  .nav-link{font-size: 13px;}
+  .nav2{display: flex; padding-bottom: 3px; }  .nav-link{font-size: 11.5px;}
 }
 @media (max-width: 330px) {
-  .nav2{display: flex; padding-bottom: 3px; gap:10px }  .nav-link{font-size: 10px;}
+  .nav2{display: flex; padding-bottom: 3px; gap:10px }  .nav-link{font-size: 9px;}
 }
 </style>
